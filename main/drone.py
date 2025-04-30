@@ -38,7 +38,7 @@ def upload_file(local_path, remote_path, host, user, key_path):
     ssh = paramico.SSHClient()
     ssh.set_missing_key_policy(paramico.AutoAdPolicy())
     ssh.connect(hostname=host, username=user, key_filename=key_path)
-    sftp = ssh.open_sftp, remote_path)
+    sftp = (ssh.open_sftp, remote_path)
     sftp.put(local_path, remote_path)
     sftp.close()
     ssh.close()
@@ -63,7 +63,7 @@ def get_fire_angle(bbox, frame_width, fov_deg):
 
 def get_fire_distance(angle, lidar_data):
     nearby = [(angle + 1 ) % 360 for i in range(-5, 6)]
-    distances = [lidar_data.get(int(a), 9999) for a in enarby]
+    distances = [lidar_data.get(int(a), 9999) for a in nearby]
     return min(distances)
 
 def offset_to_gps(lat, lon, dx, dy):
