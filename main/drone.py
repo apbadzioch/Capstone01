@@ -117,7 +117,7 @@ def send_webhook_alert(fire_lat, fire_lon, distance):
     if response.ok:
         print("Webhook alert sent.")
     else:
-        print("Failed to send sebhook:", response.status_code)
+        print("Failed to send webhook:", response.status_code)
 
 # SMS Alert
 def send_sms_alert(fire_lat, fire_lon, distance):
@@ -132,7 +132,7 @@ def send_sms_alert(fire_lat, fire_lon, distance):
     )
 
 '''
-Email_to_SMS Gateway (fre):
+Email_to_SMS Gateway (free):
 send email to:
     - AT&T: 1234567890@txt.att.net
     - T-Mobile: 1234567890@tmomail.net
